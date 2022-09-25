@@ -9,7 +9,7 @@ public class Main {
         Board board = new Board();
         Scanner scanner = new Scanner(System.in);
 
-        while(true) {
+        while (true) {
             board.wipeBoard();
             int turn = 0;
             int count = 1;
@@ -23,7 +23,7 @@ public class Main {
                 break;
 
             //Tests for bad parameters.
-            if(param.length < 3){
+            if (param.length < 3) {
                 System.out.println("Bad Parameters!");
                 continue;
             }
@@ -31,21 +31,20 @@ public class Main {
                 System.out.println("Bad Parameters!");
                 continue;
             }
-            if (!"user".equals(param[1])&&!difficulties.contains(param[1]))
-            {
+            if (!"user".equals(param[1]) && !difficulties.contains(param[1])) {
                 System.out.println("Bad Parameters!");
                 continue;
             }
-            if (!"user".equals(param[2])&&!difficulties.contains(param[2])) {
+            if (!"user".equals(param[2]) && !difficulties.contains(param[2])) {
                 System.out.println("Bad Parameters!");
                 continue;
             }
             //Display an empty board
             board.display();
 
-            while (board.gameOngoing) {
+            while (board.isGameOngoing()) {
                 if (count == 9) {
-                    board.gameOngoing = false;
+                    board.setGameOngoing(false);
                 }
 
                 if (turn == 0)

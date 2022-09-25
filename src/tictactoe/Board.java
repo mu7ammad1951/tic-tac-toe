@@ -1,13 +1,22 @@
 package tictactoe;
 
 public class Board {
-    public boolean gameOngoing = true;
+
+
+    private boolean gameOngoing = true;
     private final int[][] gameState = new int[3][3];
 
     public int[][] getGameState() {
         return gameState.clone();
     }
 
+    public boolean isGameOngoing() {
+        return gameOngoing;
+    }
+
+    public void setGameOngoing(boolean gameOngoing) {
+        this.gameOngoing = gameOngoing;
+    }
 
     /**
      * Display the current state of the board
